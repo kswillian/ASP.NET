@@ -126,6 +126,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\FiliaisController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\PratosController.cs" />
     <Compile Include="Global.asax.cs">
@@ -176,6 +177,11 @@
     <Content Include="Views\Pratos\Details.cshtml" />
     <Content Include="Views\Pratos\Edit.cshtml" />
     <Content Include="Views\Pratos\Index.cshtml" />
+    <Content Include="Views\Filiais\Create.cshtml" />
+    <Content Include="Views\Filiais\Delete.cshtml" />
+    <Content Include="Views\Filiais\Details.cshtml" />
+    <Content Include="Views\Filiais\Edit.cshtml" />
+    <Content Include="Views\Filiais\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
