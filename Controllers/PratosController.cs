@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
@@ -11,9 +12,16 @@ namespace ASP.NET_Web_Application.Controllers
         private PratoDBContext db = new PratoDBContext();
 
         // GET: Pratos
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            return View(db.Pratos.ToList());
+            var pratos = from m in db.Pratos
+                          select m;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                pratos = pratos.Where(s => s.nome.Contains(searchString));
+            }
+
+            return View(pratos);
         }
 
         // GET: Pratos/Details/5

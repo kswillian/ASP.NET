@@ -15,10 +15,18 @@ namespace ASP.NET_Web_Application.Controllers
         private FilialDBContext db = new FilialDBContext();
 
         // GET: Filiais
-        public ActionResult Index()
+        public ActionResult Index(string searchString)
         {
-            return View(db.Filiais.ToList());
+            var filiais = from m in db.Filiais
+                          select m;
+            if (!String.IsNullOrEmpty(searchString))
+            {
+                filiais = filiais.Where(s => s.nome.Contains(searchString));
+            }
+
+            return View(filiais);
         }
+
 
         // GET: Filiais/Details/5
         public ActionResult Details(int? id)
