@@ -4,60 +4,42 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<div class="jumbotron" style="margin-top:4em">
+    <h1>Cadastro de Pratos</h1>
+</div>
 
-
-@using (Html.BeginForm()) 
+@using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
-    
-    <div class="form-horizontal">
-        <h4>Prato</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-horizontal form-edit-prato">
         <div class="form-group">
-            @Html.LabelFor(model => model.url_img, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.url_img, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.url_img, "", new { @class = "text-danger" })
-            </div>
+            <label for="formGroupExampleInput">Endereço da imagem</label>
+            @Html.EditorFor(model => model.url_img, new { htmlAttributes = new { @class = "form-control", @placeholder = "URL" } })
+            @Html.ValidationMessageFor(model => model.url_img, "", new { @class = "text-danger" })
         </div>
-
         <div class="form-group">
-            @Html.LabelFor(model => model.nome, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.nome, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.nome, "", new { @class = "text-danger" })
-            </div>
+            <label for="formGroupExampleInput">Nome do Prato</label>
+            @Html.EditorFor(model => model.nome, new { htmlAttributes = new { @class = "form-control", @placeholder = "Nome do Prato"  } })
+            @Html.ValidationMessageFor(model => model.nome, "", new { @class = "text-danger" })
         </div>
-
         <div class="form-group">
-            @Html.LabelFor(model => model.descricao, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.descricao, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.descricao, "", new { @class = "text-danger" })
-            </div>
+            <label for="formGroupExampleInput">Descrição do Prato</label>
+            @Html.EditorFor(model => model.descricao, new { htmlAttributes = new { @class = "form-control",  @placeholder = "Descrição do Prato" } })
+            @Html.ValidationMessageFor(model => model.descricao, "", new { @class = "text-danger" })
         </div>
-
         <div class="form-group">
-            @Html.LabelFor(model => model.valor, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.valor, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.valor, "", new { @class = "text-danger" })
-            </div>
+            <label for="formGroupExampleInput">Valor</label>
+            @Html.EditorFor(model => model.valor, new { htmlAttributes = new { @class = "form-control",  @placeholder = "R$" } })
+            @Html.ValidationMessageFor(model => model.valor, "", new { @class = "text-danger" })
         </div>
-
         <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
+            <div>
+                <input type="submit" value="Salvar" class="btn btn-tacos" />
+                @Html.ActionLink("Voltar", "Index", "", htmlAttributes: new { @class = "btn btn-tacos", @role = "button" })
             </div>
         </div>
     </div>
 }
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
-</div>
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
