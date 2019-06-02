@@ -23,11 +23,6 @@ textarea {
     max-width: 280px;
 }
 
-.tex-tacos {
-    color: #ff612a
-}
-
-
 /* Navbar*/
 .navbar {
     background: #ff612a;
@@ -72,4 +67,19 @@ textarea {
 
 .list{
     margin-top: 2em;
+}
+
+/* Edição de Pratos */
+.form-edit-prato {
+    margin-top:4em;
+    align-items:center;
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    justify-content:center;
+}
+
+/**/
+.tex-tacos {
+    color: #ff612a
 }

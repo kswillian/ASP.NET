@@ -42,7 +42,7 @@
                 R$ @Html.DisplayFor(modelItem => item.valor),00
             </h4>
             <p>
-                @Html.ActionLink("Edit", "Edit", routeValues: new { id = item.id }, htmlAttributes: new { @class = "btn btn-tacos btn-sm", @role = "button" })
+                @Html.ActionLink("Editar", "Edit", routeValues: new { id = item.id }, htmlAttributes: new { @class = "btn btn-tacos btn-sm", @role = "button" })
                 @Html.ActionLink("Detalhes", "Details", routeValues: new { id = item.id }, htmlAttributes: new { @class = "btn btn-tacos  btn-sm", @role = "button" })
                 @Html.ActionLink("Delete", "Delete", routeValues: new { id = item.id }, htmlAttributes: new { @class = "btn btn-tacos  btn-sm", @role = "button" })
             </p>
