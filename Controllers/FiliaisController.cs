@@ -16,8 +16,8 @@ namespace ASP.NET_Web_Application.Controllers
         // GET: Filiais
         public ActionResult Index(string searchString)
         {
-            var filiais = from m in db.Filiais
-                          select m;
+            var filiais = from f in db.Filiais
+                          select f;
             if (!String.IsNullOrEmpty(searchString))
             {
                 filiais = filiais.Where(s => s.nome.Contains(searchString));
@@ -53,7 +53,7 @@ namespace ASP.NET_Web_Application.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "id,nome,cep,logradouro,bairro")] Filial filial)
+        public ActionResult Create([Bind(Include = "id,nome,cep,logradouro,bairro,uf")] Filial filial)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace ASP.NET_Web_Application.Controllers
         // obter mais detalhes, consulte https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "id,nome,cep,logradouro,bairro")] Filial filial)
+        public ActionResult Edit([Bind(Include = "id,nome,cep,logradouro,bairro,uf")] Filial filial)
         {
             if (ModelState.IsValid)
             {

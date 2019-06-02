@@ -97,3 +97,18 @@ textarea {
 .tex-tacos {
     color: #ff612a
 }
+
+/*
+    Edição de Filiais
+*/
+/* 
+    Edição de Pratos --------------------------------
+*/
+.form-edit-filial {
+    margin-top: 4em;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}

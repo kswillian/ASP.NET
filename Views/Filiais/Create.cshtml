@@ -4,69 +4,55 @@
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
+<div class="jumbotron" style="margin-top:4em">
+    <h1>Cadastro de Pratos</h1>
+</div>
 
 
 @using (Html.BeginForm())
 {
     @Html.AntiForgeryToken()
 
-    <div class="form-horizontal">
-        <h4>Filial</h4>
-        <hr />
-        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-        <div class="form-group">
-            @Html.LabelFor(model => model.nome, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.nome, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.nome, "", new { @class = "text-danger" })
-            </div>
-        </div>
+<div class="form-horizontal form-edit-prato">
+    @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+    <div class="form-group">
+        <label for="formGroupExampleInput">Nome da Filial</label>
+        @Html.EditorFor(model => model.nome, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.nome, "", new { @class = "text-danger" })
+    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.cep, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.cep, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.cep, "", new { @class = "text-danger" })
-            </div>
-        </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput">CEP</label>
+        @Html.EditorFor(model => model.cep, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.cep, "", new { @class = "text-danger" })
+    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.logradouro, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.logradouro, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.logradouro, "", new { @class = "text-danger" })
-            </div>
-        </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput">Logradouro</label>
+        @Html.EditorFor(model => model.logradouro, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.logradouro, "", new { @class = "text-danger" })
+    </div>
 
-        <div class="form-group">
-            @Html.LabelFor(model => model.bairro, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                @Html.EditorFor(model => model.bairro, new { htmlAttributes = new { @class = "form-control" } })
-                @Html.ValidationMessageFor(model => model.bairro, "", new { @class = "text-danger" })
-            </div>
-        </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput">Bairro</label>
+        @Html.EditorFor(model => model.bairro, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.bairro, "", new { @class = "text-danger" })
+    </div>
 
-        <div class="form-group">
-            <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Create" class="btn btn-default" />
-            </div>
-            <div class="col-md-offset-2 col-md-10">
-                <input id="botao" value="Consultar" class="btn btn-default"/>
-            </div>
+    <div class="form-group">
+        <label for="formGroupExampleInput">UF</label>
+        @Html.EditorFor(model => model.uf, new { htmlAttributes = new { @class = "form-control" } })
+        @Html.ValidationMessageFor(model => model.uf, "", new { @class = "text-danger" })
+    </div>
+
+    <div class="form-group">
+        <div>
+            <input type="submit" value="Salvar" class="btn btn-tacos" />
+            @Html.ActionLink("Voltar", "Index", "", htmlAttributes: new { @class = "btn btn-tacos", @role = "button" })
         </div>
     </div>
-}
-
-<script type="text/javascript">
-        $("#botao").click(function () {
-            PageMethods.MeuMetodo("Cigano Morrison Mendez");
-        });
-</script>
-
-<div>
-    @Html.ActionLink("Back to List", "Index")
 </div>
+}
 
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
