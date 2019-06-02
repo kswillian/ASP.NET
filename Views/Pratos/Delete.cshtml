@@ -4,53 +4,65 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<h1 class="tex-tacos" style="margin: 1em 0em 0em 0em">Deletar Prato</h1>
+<h3>Tem certeza de que deseja excluir isso?</h3>
+<hr />
 
-<h3>Are you sure you want to delete this?</h3>
-<div>
-    <h4>Prato</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.url_img)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.url_img)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.nome)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.nome)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.descricao)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.descricao)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.valor)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.valor)
-        </dd>
-
-    </dl>
-
-    @using (Html.BeginForm()) {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+<div class="container form-edit-prato">
+    <div class="row" style="margin: 0em 0em 4em 0em">
+        <div class="col-md-6">
+            <picture>
+                <img src="@Html.DisplayFor(model => model.url_img)" class="img-fluid img-thumbnail img-tacos" alt="..." width="500">
+            </picture>
         </div>
-    }
+        <div class="col-md-6">
+            <ul class="list-group">
+
+                <li class="list-group-item">
+                    <h4>
+                        <b>IDENTIFICADOR:</b>
+                        @Html.DisplayFor(model => model.id)
+                    </h4>
+                </li>
+
+                <li class="list-group-item">
+                    <h4>
+                        <b>NOME:</b>
+                        @Html.DisplayFor(model => model.nome)
+                    </h4>
+                </li>
+
+                <li class="list-group-item">
+
+                    <h4><b>DESCRIÇÃO:</b></h4>
+                    @Html.DisplayFor(model => model.descricao)
+
+                </li>
+
+                <li class="list-group-item">
+                    <h4>
+                        <b>VALOR:</b> R$
+                        @Html.DisplayFor(model => model.valor)
+                    </h4>
+                </li>
+
+                <li class="list-group-item">
+
+                    <h4><b>URL:</b></h4>
+                    <p>@Html.DisplayFor(model => model.url_img)</p>
+
+                </li>
+            </ul>
+        </div>
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-group" style="margin: 2em 0em 0em 1em">
+                <div>
+                    <input type="submit" value="Delete" class="btn btn-tacos" />
+                    @Html.ActionLink("Voltar para a lista", "Index", "", htmlAttributes: new { @class = "btn btn-tacos", @role = "button" })
+                </div>
+            </div>
+        }
+        </div>
 </div>
