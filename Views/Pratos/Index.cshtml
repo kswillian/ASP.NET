@@ -28,9 +28,9 @@
     <div class="row">
         @foreach (var item in Model)
         {
-        <div class="container-fluid list col-md-3">
+        <div class="list col-lg-3">
             <picture>
-                <img src="@Html.DisplayFor(modelItem => item.url_img)" class="img-fluid img-thumbnail" alt="..." width="300">
+                <img src="@Html.DisplayFor(modelItem => item.url_img)" class="img-fluid img-thumbnail img-tacos" alt="..." width="300">
             </picture>
             <h2>
                 @Html.DisplayFor(modelItem => item.nome)
@@ -38,7 +38,7 @@
             <p>
                 @Html.DisplayFor(modelItem => item.descricao)
             </p>
-            <h4 class="text-right tex-tacos">
+            <h4 class="tex-tacos">
                 R$ @Html.DisplayFor(modelItem => item.valor),00
             </h4>
             <p>

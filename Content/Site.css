@@ -57,6 +57,10 @@ textarea {
 }
 
 /* Lista de Pratos*/
+.img-tacos {
+    background-size: cover;
+}
+
 .form-inline {
     margin: 2em 0em 2em 0em;
 }
