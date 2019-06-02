@@ -163,8 +163,8 @@ C:\Users\windows\source\repos\ASP.NET\bin\pt-br\System.Web.Razor.resources.dll
 C:\Users\windows\source\repos\ASP.NET\bin\pt-br\System.Web.WebPages.resources.dll
 C:\Users\windows\source\repos\ASP.NET\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
 C:\Users\windows\source\repos\ASP.NET\bin\pt-br\System.Web.WebPages.Razor.resources.dll
-C:\Users\windows\source\repos\ASP.NET\obj\Debug\ASP .NET Web Application.csprojAssemblyReference.cache
 C:\Users\windows\source\repos\ASP.NET\obj\Debug\ASP .NET Web Application.csproj.CoreCompileInputs.cache
 C:\Users\windows\source\repos\ASP.NET\obj\Debug\ASP .NET Web Application.csproj.CopyComplete
 C:\Users\windows\source\repos\ASP.NET\obj\Debug\ASP.NET_Web_Application.dll
 C:\Users\windows\source\repos\ASP.NET\obj\Debug\ASP.NET_Web_Application.pdb
+C:\Users\windows\source\repos\ASP.NET\obj\Debug\ASP .NET Web Application.csprojAssemblyReference.cache

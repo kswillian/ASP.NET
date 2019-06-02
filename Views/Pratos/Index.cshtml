@@ -4,56 +4,48 @@
     ViewBag.Title = "Index";
 }
 
-<h2>Index</h2>
+<div class="jumbotron" style="margin-top:4em">
+    <h1>La Takeria</h1>
+    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
+    <p><a href="https://asp.net" class="btn btn-tacos btn-lg">Learn more &raquo;</a></p>
+</div>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-    @using (Html.BeginForm())
-    {
-    <p>
-        Title: @Html.TextBox("SearchString") <br />
-        <input type="submit" value="Filter" />
-    </p>
-}
-    </p>
-    <table class="table">
-        <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.url_img)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.nome)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.descricao)
-            </th>
-            <th>
-                @Html.DisplayNameFor(model => model.valor)
-            </th>
-            <th></th>
-        </tr>
+<form class="form-inline">
+    <div class="form-group">
+        @Html.TextBox("SearchString", "", new { @maxlength = "50", @size = "10", @class = "form-control"})
+    </div>
+    <button type="submit" class="btn btn-tacos mb-2">Filtrar</button>
+    <a class="btn btn-tacos mb-2"
+       @Html.ActionLink("Novo + ", "Create")
+    </a>
+    <button type="submit" class="btn btn-tacos mb-2" disabled>Novo +</button>
+    <button type="submit" class="btn btn-tacos mb-2" disabled>Novo +</button>
+    <button type="submit" class="btn btn-tacos mb-2" disabled>Novo +</button>
+    <button type="submit" class="btn btn-tacos mb-2" disabled>Novo +</button>
+    <button type="submit" class="btn btn-tacos mb-2" disabled>Novo</button>
+</form>
 
+    <div class="row">
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.url_img)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.nome)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.descricao)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.valor)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.id })
-                </td>
-            </tr>
+        <div class="container-fluid list col-md-3">
+            <picture>
+                <img src="@Html.DisplayFor(modelItem => item.url_img)" class="img-fluid img-thumbnail" alt="..." width="300">
+            </picture>
+            <h2>
+                @Html.DisplayFor(modelItem => item.nome)
+            </h2>
+            <p>
+                @Html.DisplayFor(modelItem => item.descricao)
+            </p>
+            <h4 class="text-right tex-tacos">
+                R$ @Html.DisplayFor(modelItem => item.valor),00
+            </h4>
+            <p>
+                @Html.ActionLink("Edit", "Edit", routeValues: new { id = item.id }, htmlAttributes: new { @class = "btn btn-tacos btn-sm", @role = "button" })
+                @Html.ActionLink("Detalhes", "Details", routeValues: new { id = item.id }, htmlAttributes: new { @class = "btn btn-tacos  btn-sm", @role = "button" })
+                @Html.ActionLink("Delete", "Delete", routeValues: new { id = item.id }, htmlAttributes: new { @class = "btn btn-tacos  btn-sm", @role = "button" })
+            </p>
+        </div>
         }
-
-    </table>
+    </div>

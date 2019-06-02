@@ -22,3 +22,54 @@ select,
 textarea {
     max-width: 280px;
 }
+
+.tex-tacos {
+    color: #ff612a
+}
+
+
+/* Navbar*/
+.navbar {
+    background: #ff612a;
+    border: none;
+}
+
+.navbar-inverse .navbar-brand {
+    color: white;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+    color: white;
+}
+
+/* Banner*/
+.jumbotron {
+    background-image: url("https://www.dailydot.com/wp-content/uploads/fbc/f4/7b71c81c63c2ea0501ea090042211490.jpg");
+    background-size: cover;
+    color: white;
+}
+
+/* Botões*/
+.btn-tacos {
+    background: #ff612a;
+    color:white;
+}
+
+.btn-tacos:hover {
+    background:white;
+    border: solid #ff612a 1px;
+    color: #ff612a
+}
+
+/* Lista de Pratos*/
+.form-inline {
+    margin: 2em 0em 2em 0em;
+}
+
+.form-control, .form-group {
+    min-width: 45em;
+}
+
+.list{
+    margin-top: 2em;
+}
