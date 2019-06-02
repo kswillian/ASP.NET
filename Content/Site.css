@@ -37,6 +37,7 @@ textarea {
     color: white;
 }
 
+
 /* Banner*/
 .jumbotron {
     background-image: url("https://www.dailydot.com/wp-content/uploads/fbc/f4/7b71c81c63c2ea0501ea090042211490.jpg");
@@ -56,7 +57,9 @@ textarea {
     color: #ff612a
 }
 
-/* Lista de Pratos*/
+/* 
+    Lista de Pratos --------------------------------
+*/
 .img-tacos {
     background-size: cover;
 }
@@ -73,7 +76,9 @@ textarea {
     margin-top: 2em;
 }
 
-/* Edição de Pratos */
+/* 
+    Edição de Pratos --------------------------------
+*/
 .form-edit-prato {
     margin-top:4em;
     align-items:center;
@@ -82,6 +87,11 @@ textarea {
     flex-wrap:wrap;
     justify-content:center;
 }
+
+/* 
+    Detalhes dos Pratos --------------------------------
+*/
+
 
 /**/
 .tex-tacos {

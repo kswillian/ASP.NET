@@ -25,27 +25,27 @@
     <button type="submit" class="btn btn-tacos mb-2" disabled>Novo</button>
 </form>
 
-    <div class="row">
-        @foreach (var item in Model)
-        {
-        <div class="list col-lg-3">
-            <picture>
-                <img src="@Html.DisplayFor(modelItem => item.url_img)" class="img-fluid img-thumbnail img-tacos" alt="..." width="300">
-            </picture>
-            <h2>
-                @Html.DisplayFor(modelItem => item.nome)
-            </h2>
-            <p>
-                @Html.DisplayFor(modelItem => item.descricao)
-            </p>
-            <h4 class="tex-tacos">
-                R$ @Html.DisplayFor(modelItem => item.valor),00
-            </h4>
-            <p>
-                @Html.ActionLink("Editar", "Edit", routeValues: new { id = item.id }, htmlAttributes: new { @class = "btn btn-tacos btn-sm", @role = "button" })
-                @Html.ActionLink("Detalhes", "Details", routeValues: new { id = item.id }, htmlAttributes: new { @class = "btn btn-tacos  btn-sm", @role = "button" })
-                @Html.ActionLink("Delete", "Delete", routeValues: new { id = item.id }, htmlAttributes: new { @class = "btn btn-tacos  btn-sm", @role = "button" })
-            </p>
-        </div>
-        }
+<div class="row">
+    @foreach (var item in Model)
+    {
+    <div class="list col-lg-3">
+        <picture>
+            <img src="@Html.DisplayFor(modelItem => item.url_img)" class="img-fluid img-thumbnail img-tacos" alt="..." width="300">
+        </picture>
+        <h2>
+            @Html.DisplayFor(modelItem => item.nome)
+        </h2>
+        <p>
+            @Html.DisplayFor(modelItem => item.descricao)
+        </p>
+        <h4 class="tex-tacos">
+            R$ @Html.DisplayFor(modelItem => item.valor),00
+        </h4>
+        <p>
+            @Html.ActionLink("Editar", "Edit", routeValues: new { id = item.id }, htmlAttributes: new { @class = "btn btn-tacos btn-sm", @role = "button" })
+            @Html.ActionLink("Detalhes", "Details", routeValues: new { id = item.id }, htmlAttributes: new { @class = "btn btn-tacos  btn-sm", @role = "button" })
+            @Html.ActionLink("Deletar", "Delete", routeValues: new { id = item.id }, htmlAttributes: new { @class = "btn btn-tacos  btn-sm", @role = "button" })
+        </p>
     </div>
+    }
+</div>
