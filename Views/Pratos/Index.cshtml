@@ -38,7 +38,7 @@
             @Html.DisplayFor(modelItem => item.descricao)
         </p>
         <h4 class="tex-tacos">
-            R$ @Html.DisplayFor(modelItem => item.valor),00
+            R$ @Html.DisplayFor(modelItem => item.valor)
         </h4>
         <p>
             @Html.ActionLink("Editar", "Edit", routeValues: new { id = item.id }, htmlAttributes: new { @class = "btn btn-tacos btn-sm", @role = "button" })

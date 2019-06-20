@@ -1,9 +1,11 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
 using ASP.NET_Web_Application.Models;
+using Newtonsoft.Json;
 
 namespace ASP.NET_Web_Application.Controllers
 {
@@ -14,14 +16,52 @@ namespace ASP.NET_Web_Application.Controllers
         // GET: Pratos
         public ActionResult Index(string searchString)
         {
-            var pratos = from m in db.Pratos
-                          select m;
+            var pratos = from m in db.Pratos select m;
+
             if (!String.IsNullOrEmpty(searchString))
             {
                 pratos = pratos.Where(s => s.nome.Contains(searchString));
             }
 
-            return View(pratos);
+            var tableList = new List<Prato> { };
+            int numRows = db.Pratos.Count();
+
+            foreach (var item in pratos)
+            {
+                tableList.Add(new Prato()
+                {
+                    nome = item.nome,
+                    descricao = item.descricao,
+                    url_img = item.url_img,
+                    valor = item.valor
+                });
+            }
+
+            String URL = "http://localhost:10000/tacos";
+
+            using (var webClient = new System.Net.WebClient())
+            {
+                String json = webClient.DownloadString(URL);
+                var item = new List<Prato>();
+                JsonConvert.PopulateObject(json, item);
+
+                for (int i = 0; i < item.Count(); i++)
+                {
+
+                    foreach (var itemTable in tableList)
+                    {
+                        if (itemTable.nome == item[i].nome && item[i].valor < itemTable.valor)
+                        {
+                            itemTable.valor = item[i].valor * 0.9;
+                        }
+                    }
+
+                    //tableList.Add(item[i]);
+                }
+            }
+            //return View(pratos);
+            return View(tableList);
+
         }
 
         // GET: Pratos/Details/5
