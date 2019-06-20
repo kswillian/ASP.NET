@@ -29,7 +29,8 @@ namespace ASP.NET_Web_Application.Controllers
             foreach (var item in pratos)
             {
                 tableList.Add(new Prato()
-                {
+                {   
+                    id = item.id,
                     nome = item.nome,
                     descricao = item.descricao,
                     url_img = item.url_img,
