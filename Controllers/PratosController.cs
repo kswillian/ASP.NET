@@ -38,7 +38,7 @@ namespace ASP.NET_Web_Application.Controllers
                 });
             }
 
-            String URL = "http://localhost:10000/tacos";
+            String URL = "http://10.200.118.60:8081/pratos";
 
             using (var webClient = new System.Net.WebClient())
             {
@@ -53,7 +53,7 @@ namespace ASP.NET_Web_Application.Controllers
                     {
                         if (itemTable.nome == item[i].nome && item[i].valor < itemTable.valor)
                         {
-                            itemTable.valor = item[i].valor * 0.9;
+                            itemTable.valor = item[i].valor * 0.90;
                         }
                     }
 
